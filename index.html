@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator</title>
+    <script src="./css/style.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="min-h-screen container mx-auto py-8 px-4">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-blue-400"></svg>
+                <h1 class="text-2xl font-bold">Time Calculator</h1>
+            </div>
+            <button class="p-2 rounded-full">
+                <svg class="w-5 h-5"></svg>
+            </button>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Cover Time Section -->
+            <div class="w-full md:w-1/2">
+                <div class="p-4 rounded-lg mb-6 bg-gray-800">
+                    <label class="block text-sm font-medium mb-1">Cover Time</label>
+                    <input type="text" value="42h 30m" id="needCover"
+                        class="w-full px-3 py-2 rounded-md bg-gray-700 border-gray-600 text-white"
+                        placeholder="e.g., 42H : 30M" />
+                    <!-- Weekly Time Input Table -->
+                    <table class="w-full mt-4">
+                        <thead>
+                            <tr>
+                                <th class="text-left py-2">Day</th>
+                                <th class="text-left py-2">Hours & Minutes</th>
+                                <th class="text-left py-2">Combined</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-gray-700">
+                                <td class="py-2">Monday</td>
+                                <td class="py-2 flex gap-2">
+                                    <input type="number" name="hours[]"
+                                        class="hours w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        placeholder="Hours" />
+                                    <input type="number" name="minutes[]"
+                                        class="minutes w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Minutes" />
+                                </td>
+                                <td class="py-2">
+                                    <input type="text" name="combined[]"
+                                        class="combined w-full px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        placeholder="e.g., 6h 13m" />
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-700">
+                                <td class="py-2">Tuesday</td>
+                                <td class="py-2 flex gap-2">
+                                    <input type="number" name="hours[]"
+                                        class="hours w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Hours" />
+                                    <input type="number" name="minutes[]"
+                                        class="minutes w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Minutes" />
+                                </td>
+                                <td class="py-2">
+                                    <input type="text" name="combined[]"
+                                        class="combined w-full px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        placeholder="e.g., 6h 13m" />
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-700">
+                                <td class="py-2">Wednesday</td>
+                                <td class="py-2 flex gap-2">
+                                    <input type="number" name="hours[]"
+                                        class="hours w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Hours" />
+                                    <input type="number" name="minutes[]"
+                                        class="minutes w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Minutes" />
+                                </td>
+                                <td class="py-2">
+                                    <input type="text" name="combined[]"
+                                        class="combined w-full px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        placeholder="e.g., 6h 13m" />
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-700">
+                                <td class="py-2">Thursday</td>
+                                <td class="py-2 flex gap-2">
+                                    <input type="number" name="hours[]"
+                                        class="hours w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Hours" />
+                                    <input type="number" name="minutes[]"
+                                        class="minutes w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Minutes" />
+                                </td>
+                                <td class="py-2">
+                                    <input type="text" name="combined[]"
+                                        class="combined w-full px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        placeholder="e.g., 6h 13m" />
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-700">
+                                <td class="py-2">Friday</td>
+                                <td class="py-2 flex gap-2">
+                                    <input type="number" name="hours[]"
+                                        class="hours w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Hours" />
+                                    <input type="number" name="minutes[]"
+                                        class="minutes w-20 px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        min="0" placeholder="Minutes" />
+                                </td>
+                                <td class="py-2">
+                                    <input type="text" name="combined[]"
+                                        class="combined w-full px-2 py-1 rounded bg-gray-700 border-gray-600 text-white"
+                                        placeholder="e.g., 6h 13m" />
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <button onclick="calculateTotalTime()" class="mt-3 w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                        Calculate
+                    </button>
+                    <p class="text-lg font-semibold text-blue-400">Total Time: <b id="totalHours">00</b>H : <b id="totalMunites">00</b>M</p>
+                    <p class="text-lg font-semibold text-blue-400">Reamining Time: <b id="remainingHours">00</b>H : <b id="remainingMunites">00</b>M</p>(need to cover)
+                            <!-- Repeat rows for other days -->
+                </div>
+            </div>
+
+            <!-- Punch Time Calculator -->
+            <div class="w-full md:w-1/2">
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h2 class="text-xl font-semibold mb-4">Punch Calculator</h2>
+                    <div class="space-y-4">
+                        <div class="punchContent" >
+                            <label class="block text-sm font-medium mb-1">Covered Time</label>
+                            <input type="text" id="alreadyCovered" class="w-full px-3 py-2 rounded-md bg-gray-700 border-gray-600 text-white" placeholder="eg: 4h 30m">
+                            <div class="p-1 rounded-lg mb-1 bg-gray-800"></div>
+                            <div class="flex items-center gap-2 mb-2" data-index="0">
+                                <input type="time" name="inTime[]"
+                                    class="inTime flex-1 px-3 py-2 rounded bg-gray-700 border-gray-600 text-white" />
+                                <span>to</span>
+                                <input type="time" name="outTime[]"
+                                    class="outTime flex-1 px-3 py-2 rounded bg-gray-700 border-gray-600 text-white" />
+                                <button class="addPunch p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-plus w-5 h-5 text-blue-500">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5v14"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 rounded bg-gray-700 ">
+                            <button onclick="calculatePunchTime()" class="w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                Calculate
+                            </button>
+                            <p class="text-lg font-semibold mb-2">Punch Total: <b id="punchHours">00</b>h <b id="punchMinutes">00</b>m</p>
+                            <p class="text-lg font-semibold text-blue-400">Total Time: <b id="punchTotalhours">00</b>h <b id="punchTotalmunites">00</b>m</p>
+                        </div>
+                        <!-- </div> -->
+                        </divdata-index=>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+<script src="./js/script.js"></script>
+
+</html>
